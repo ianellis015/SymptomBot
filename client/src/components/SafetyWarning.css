@@ -1,0 +1,117 @@
+/* Safety Warning Component Styles */
+
+.safety-warning {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+    animation: pulse-danger 2s ease-in-out infinite, fade-in 0.4s ease;
+}
+
+.safety-warning::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-danger), #ff9f43, var(--color-danger));
+    background-size: 200% 100%;
+    animation: warning-stripe 2s linear infinite;
+}
+
+@keyframes warning-stripe {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.safety-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.safety-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239, 68, 68, 0.2);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.safety-title {
+    color: var(--color-danger);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.safety-content {
+    margin-bottom: var(--space-lg);
+}
+
+.safety-content p {
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+}
+
+.safety-content strong {
+    color: var(--color-danger);
+}
+
+.safety-action {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.safety-action-icon {
+    font-size: 1.5rem;
+}
+
+.safety-action-text {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.safety-footer {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.safety-disclaimer {
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    font-style: italic;
+}
